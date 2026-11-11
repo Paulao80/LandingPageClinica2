@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import { ArrowUpRight, Menu } from 'lucide-react'
 
+import { Reveal } from '@/components/reveal'
+
 export function SiteHeader() {
   return (
-    <header className="absolute inset-x-0 top-0 z-20">
+    <Reveal as="header" variant="fade-down" className="absolute inset-x-0 top-0 z-20">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
         <a href="#inicio" className="flex items-center gap-3" aria-label="Dr. André Almeida - início">
           <span className="grid size-11 place-items-center rounded-full bg-[#d9f1f2]">
@@ -40,6 +42,6 @@ export function SiteHeader() {
           <Menu size={20} />
         </button>
       </div>
-    </header>
+    </Reveal>
   )
 }

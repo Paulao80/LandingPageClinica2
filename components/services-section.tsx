@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { ArrowUpRight, ShieldCheck, Stethoscope } from 'lucide-react'
 
+import { Reveal } from '@/components/reveal'
+
 const services = [
   {
     icon: null,
@@ -23,7 +25,7 @@ export function ServicesSection() {
   return (
     <section id="servicos" className="bg-[#edf7f6] px-6 py-24 lg:px-10 lg:py-28">
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <Reveal className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#0e8b91]">Como posso ajudar</p>
             <h2 className="font-serif text-4xl tracking-tight text-[#163b45] sm:text-5xl">
@@ -34,11 +36,13 @@ export function ServicesSection() {
           <p className="max-w-xs text-sm leading-6 text-[#6a8287]">
             Um olhar atento para cuidar do que realmente importa: você.
           </p>
-        </div>
+        </Reveal>
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {services.map(({ icon: Icon, title, text }, index) => (
-            <article
+            <Reveal
+              as="article"
               key={title}
+              delay={index * 120}
               className={`rounded-3xl p-8 ${index === 1 ? 'bg-[#0e7983] text-white shadow-xl shadow-[#0e7983]/15' : 'bg-white text-[#163b45]'}`}
             >
               <span
@@ -58,7 +62,7 @@ export function ServicesSection() {
               >
                 Saiba mais <ArrowUpRight size={15} />
               </a>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

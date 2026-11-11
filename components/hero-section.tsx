@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import { ArrowUpRight, Clock3 } from 'lucide-react'
 
+import { Reveal } from '@/components/reveal'
+
 export function HeroSection() {
   return (
     <section id="inicio" className="relative min-h-[760px] bg-[#eaf6f7] pt-32 lg:min-h-[780px] lg:pt-40">
       <div className="pointer-events-none absolute -right-32 -top-32 size-[560px] rounded-full border-[70px] border-white/35" />
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[1fr_0.86fr] lg:px-10">
-        <div className="relative z-10 max-w-xl pb-10 lg:pb-24">
+        <Reveal variant="fade-left" className="relative z-10 max-w-xl pb-10 lg:pb-24">
           <p className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-[#0e8b91]">
             <span className="h-px w-9 bg-[#0e8b91]" /> Cuidado que acolhe
           </p>
@@ -42,8 +44,12 @@ export function HeroSection() {
               cuidando da saúde com tranquilidade
             </span>
           </div>
-        </div>
-        <div className="relative mx-auto w-full max-w-[490px] self-end lg:mr-4">
+        </Reveal>
+        <Reveal
+          variant="fade-right"
+          delay={120}
+          className="relative mx-auto w-full max-w-[490px] self-end lg:mr-4"
+        >
           <div className="absolute -bottom-7 -left-7 z-10 rounded-2xl bg-white p-5 shadow-xl shadow-[#2c6970]/10">
             <div className="mb-2 flex items-center gap-2 text-[#0e8b91]">
               <Clock3 size={18} />
@@ -61,7 +67,7 @@ export function HeroSection() {
             />
           </div>
           <div className="absolute -right-9 top-20 size-24 rounded-full border border-white/80 bg-white/30" />
-        </div>
+        </Reveal>
       </div>
     </section>
   )

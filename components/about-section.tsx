@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 
+import { Reveal } from '@/components/reveal'
+
 export function AboutSection() {
   return (
     <section id="sobre" className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[0.8fr_1fr] lg:items-center lg:px-10 lg:py-32">
-      <div className="relative mx-auto w-full max-w-md">
+      <Reveal variant="fade-left" className="relative mx-auto w-full max-w-md">
         <div className="absolute -left-5 -top-5 h-28 w-28 rounded-tl-[40px] border-l border-t border-[#86c8c8]" />
         <div className="relative aspect-[0.9] overflow-hidden rounded-[28px] bg-[#dceeed]">
           <Image src="/doctor-portrait.png" alt="Dr. André Almeida" fill className="object-cover object-center grayscale-[15%]" />
@@ -13,8 +15,8 @@ export function AboutSection() {
           <p className="font-serif text-4xl">15</p>
           <p className="text-xs uppercase tracking-wider text-white/75">anos de experiência</p>
         </div>
-      </div>
-      <div className="max-w-xl">
+      </Reveal>
+      <Reveal variant="fade-right" delay={120} className="max-w-xl">
         <p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-[#0e8b91]">Sobre o doutor</p>
         <h2 className="font-serif text-4xl leading-tight tracking-tight text-[#163b45] sm:text-5xl">
           Medicina próxima, feita para a sua vida.
@@ -33,7 +35,7 @@ export function AboutSection() {
         >
           Vamos conversar <ArrowUpRight size={16} />
         </a>
-      </div>
+      </Reveal>
     </section>
   )
 }

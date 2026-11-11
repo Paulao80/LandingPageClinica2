@@ -1,10 +1,12 @@
 import { ArrowUpRight, Clock3, Phone } from 'lucide-react'
 
+import { Reveal } from '@/components/reveal'
+
 export function AppointmentSection() {
   return (
     <section id="agendamento" className="px-6 pb-24 lg:px-10 lg:pb-32">
       <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[32px] bg-[#163b45] lg:grid-cols-[1fr_0.85fr]">
-        <div className="relative p-9 sm:p-14 lg:p-16">
+        <Reveal variant="fade-left" className="relative p-9 sm:p-14 lg:p-16">
           <div className="absolute -right-16 -top-24 size-64 rounded-full border-[45px] border-white/5" />
           <p className="relative mb-5 text-xs font-bold uppercase tracking-[0.22em] text-[#8ed0ce]">
             Agende sua consulta
@@ -23,8 +25,13 @@ export function AppointmentSection() {
               <Clock3 size={16} className="text-[#8ed0ce]" /> Seg a sex, 8h–18h
             </span>
           </div>
-        </div>
-        <form className="bg-white p-9 sm:p-14 lg:p-12" action="#agendamento">
+        </Reveal>
+        <Reveal
+          as="form"
+          variant="fade-right"
+          delay={120}
+          className="bg-white p-9 sm:p-14 lg:p-12"
+        >
           <label className="mb-5 block text-sm font-semibold text-[#365961]">
             Como podemos chamar você?
             <input
@@ -57,7 +64,7 @@ export function AppointmentSection() {
           >
             Solicitar agendamento <ArrowUpRight size={17} />
           </button>
-        </form>
+        </Reveal>
       </div>
     </section>
   )
